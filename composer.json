@@ -1,0 +1,21 @@
+{
+  "name": "zip-codes-rest",
+  "authors": [
+    {
+      "name": "Ron Hansen",
+      "email": "ron.hansen112@gmail.com"
+    }
+  ],
+  "require": {
+    "gears/router": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "mockery/mockery": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "ZipCodesREST\\": "app/"
+    }
+  }
+}
