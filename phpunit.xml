@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true">
+<phpunit
+        processIsolation="false"
+        colors="true">
     <testsuites>
         <testsuite name="Application Test Suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+            <exclude>
+                <file>./app/routes.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>

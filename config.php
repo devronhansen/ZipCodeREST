@@ -5,7 +5,7 @@ return [
         'host' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'dbname' => 'zipcodes',
-        'returnLimit' => '10'
+        'dbname' => 'zipcodes'
     ],
+    'returnLimit' => '10'
 ];

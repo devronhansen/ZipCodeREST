@@ -1,8 +1,8 @@
 <?php
 
-namespace ZipCodesREST\controllers;
+namespace ZipCodesREST\Controllers;
 
-use ZipCodesREST\database\AbstractDatabase;
+use ZipCodesREST\Database\AbstractDatabase;
 
 class ZipCodesController
 {
@@ -10,11 +10,6 @@ class ZipCodesController
      * @var AbstractDatabase
      */
     protected $db;
-
-    /**
-     * @var mixed
-     */
-    protected $input;
 
     /**
      * ZipCodesController constructor.
@@ -33,21 +28,21 @@ class ZipCodesController
      */
     function show($input)
     {
-        $this->input = $input;
-        return json_encode($this->getOutput(), JSON_UNESCAPED_UNICODE);
+        return json_encode($this->getOutput($input), JSON_UNESCAPED_UNICODE);
     }
 
     /**
      * Delegates and returns from the corresponding database functions
      * depending on the input beeing a number or a string
      *
+     * @param mixed $input
      * @return mixed
      */
-    protected function getOutput()
+    protected function getOutput($input)
     {
-        if (ctype_digit($this->input)) {
-            return $this->db->selectByZipCode($this->input);
+        if (ctype_digit($input)) {
+            return $this->db->selectByZipCode($input);
         }
-        return $this->db->selectByName($this->input);
+        return $this->db->selectByName($input);
     }
 }
